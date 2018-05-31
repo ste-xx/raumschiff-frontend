@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="env.js"></script>
+</head>
+<body>
+
+Erde hier!
+
+<script>
+    (async () => {
+        //ip:host
+        let result = await fetch(`http://${ENV.dest}`).then(res => res.json());
+        let p = document.createElement("p");
+        p.innerText=JSON.stringify(result);
+        document.querySelector('body').appendChild(p);
+    })();
+</script>
+
+</body>
+</html>
