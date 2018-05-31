@@ -2,12 +2,10 @@ FROM node:carbon
 
 WORKDIR /user/src/app
 
-#COPY package*.json ./
-
 RUN npm install -g http-server
 
 COPY . .
 
-EXPOSE 8081
+EXPOSE 80
 
-CMD ["sh","-c","node generateenv.js && http-server"]
+CMD ["sh","-c","http-server -p 80"]
